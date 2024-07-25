@@ -13,6 +13,7 @@ import { useState } from 'react';
 
 import { TASKS } from '../../constants/tasks.js';
 import TaskItem from '../TaskItem/Task-item.component.jsx';
+import { toast } from 'sonner';
 
 const Tasks = () => {
   const [tasks, setTasks] = useState(TASKS);
@@ -28,14 +29,17 @@ const Tasks = () => {
       }
 
       if (task.status === 'not_started') {
+        toast.success('Tarefa iniciada!');
         return { ...task, status: 'in_progress' };
       }
 
       if (task.status === 'in_progress') {
+        toast.success('Tarefa concluída!');
         return { ...task, status: 'done' };
       }
 
       if (task.status === 'done') {
+        toast.success('Tarefa não iniciada!');
         return { ...task, status: 'not_started' };
       }
 
@@ -48,7 +52,9 @@ const Tasks = () => {
   const handleTaskDeleteClick = (taskId) => {
     const newTasks = tasks.filter((task) => task.id !== taskId);
 
-    return setTasks(newTasks);
+    setTasks(newTasks);
+
+    return toast.success('tarefa deletada com sucesso');
   };
 
   return (
