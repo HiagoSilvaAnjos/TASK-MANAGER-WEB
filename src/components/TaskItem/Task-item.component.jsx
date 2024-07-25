@@ -5,7 +5,7 @@ import {
   LoaderIcon,
 } from '../../assets/icons/index.js';
 
-const TaskItem = ({ task }) => {
+const TaskItem = ({ task, handleCheckBoxClick }) => {
   const getStatusClasses = () => {
     if (task.status === 'done') {
       return 'bg-[#00ADB5]  text-[#00ADB5] ';
@@ -22,7 +22,7 @@ const TaskItem = ({ task }) => {
 
   return (
     <div
-      className={`flex items-center justify-between gap-2 rounded-lg bg-opacity-10 px-4 py-3 font-medium ${getStatusClasses()}`}
+      className={`flex items-center justify-between gap-2 rounded-lg bg-opacity-10 px-4 py-3 font-medium transition ${getStatusClasses()}`}
     >
       <div className="flex items-center gap-2">
         <label
@@ -32,6 +32,7 @@ const TaskItem = ({ task }) => {
             type="checkbox"
             checked={task.status === 'done'}
             className="absolute h-full w-full cursor-pointer opacity-0"
+            onChange={() => handleCheckBoxClick(task.id)}
           />
           {task.status === 'done' && <CheckIcon />}
           {task.status === 'in_progress' && (
@@ -59,4 +60,5 @@ TaskItem.propTypes = {
     time: PropTypes.string.isRequired,
     status: PropTypes.string.isRequired,
   }),
+  handleCheckBoxClick: PropTypes.func.isRequired,
 };
