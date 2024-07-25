@@ -4,7 +4,7 @@ import Sidebar from './components/sidebar/sidebar.component';
 function App() {
   return (
     <>
-      <div className="flex gap-9">
+      <div className="flex">
         <Sidebar />
         <Tasks />
       </div>
