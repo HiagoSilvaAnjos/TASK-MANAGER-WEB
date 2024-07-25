@@ -1,5 +1,5 @@
 // eslint-disable-next-line react/prop-types
-const Button = ({ children, variant = 'primary' }) => {
+const Button = ({ children, variant = 'primary', ...rest }) => {
   const getVariantClasses = () => {
     if (variant === 'primary') {
       return 'bg-[#00ADB5] text-white';
@@ -12,6 +12,7 @@ const Button = ({ children, variant = 'primary' }) => {
 
   return (
     <button
+      {...rest}
       className={`flex items-center gap-2 rounded-md px-4 py-2 text-xs font-semibold transition hover:opacity-75 ${getVariantClasses()}`}
     >
       {children}

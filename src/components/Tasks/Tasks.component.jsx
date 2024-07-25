@@ -45,6 +45,12 @@ const Tasks = () => {
     setTasks(newTasks);
   };
 
+  const handleTaskDeleteClick = (taskId) => {
+    const newTasks = tasks.filter((task) => task.id !== taskId);
+
+    return setTasks(newTasks);
+  };
+
   return (
     <>
       <div className="w-full space-y-6 px-8 py-16">
@@ -76,6 +82,7 @@ const Tasks = () => {
                 task={task}
                 key={task.id}
                 handleCheckBoxClick={handleCheckBoxClick}
+                handleTaskDeleteClick={handleTaskDeleteClick}
               />
             ))}
           </div>
@@ -87,6 +94,7 @@ const Tasks = () => {
                 task={task}
                 key={task.id}
                 handleCheckBoxClick={handleCheckBoxClick}
+                handleTaskDeleteClick={handleTaskDeleteClick}
               />
             ))}
           </div>
@@ -98,6 +106,7 @@ const Tasks = () => {
                 task={task}
                 key={task.id}
                 handleCheckBoxClick={handleCheckBoxClick}
+                handleTaskDeleteClick={handleTaskDeleteClick}
               />
             ))}
           </div>

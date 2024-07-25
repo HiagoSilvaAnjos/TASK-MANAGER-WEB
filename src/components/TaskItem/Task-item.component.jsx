@@ -3,9 +3,11 @@ import {
   CheckIcon,
   DetailsIcon,
   LoaderIcon,
+  TrashIcon,
 } from '../../assets/icons/index.js';
+import Button from '../Button/Button.component.jsx';
 
-const TaskItem = ({ task, handleCheckBoxClick }) => {
+const TaskItem = ({ task, handleCheckBoxClick, handleTaskDeleteClick }) => {
   const getStatusClasses = () => {
     if (task.status === 'done') {
       return 'bg-[#00ADB5]  text-[#00ADB5] ';
@@ -41,7 +43,10 @@ const TaskItem = ({ task, handleCheckBoxClick }) => {
         </label>
         {task.title}
       </div>
-      <div className="flex items-center">
+      <div className="flex items-center gap-2">
+        <Button variant="ghost" onClick={() => handleTaskDeleteClick(task.id)}>
+          <TrashIcon className={'#9A9C9F'} />
+        </Button>
         <a href="#" className="transition hover:opacity-75">
           <DetailsIcon />
         </a>
@@ -61,4 +66,5 @@ TaskItem.propTypes = {
     status: PropTypes.string.isRequired,
   }),
   handleCheckBoxClick: PropTypes.func.isRequired,
+  handleTaskDeleteClick: PropTypes.func.isRequired,
 };
