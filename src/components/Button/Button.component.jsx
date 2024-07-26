@@ -1,4 +1,5 @@
-// eslint-disable-next-line react/prop-types
+import PropTypes from 'prop-types';
+
 const Button = ({ children, variant = 'primary', ...rest }) => {
   const getVariantClasses = () => {
     if (variant === 'primary') {
@@ -21,3 +22,8 @@ const Button = ({ children, variant = 'primary', ...rest }) => {
 };
 
 export default Button;
+
+Button.propTypes = {
+  children: PropTypes.element,
+  variant: PropTypes.string,
+};
