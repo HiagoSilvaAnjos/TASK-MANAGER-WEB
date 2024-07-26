@@ -57,6 +57,10 @@ const Tasks = () => {
     return toast.success('tarefa deletada com sucesso');
   };
 
+  const handleDialogClose = () => {
+    setTaskDialogIsOpen(false);
+  };
+
   return (
     <>
       <div className="w-full space-y-6 px-8 py-16">
@@ -78,7 +82,10 @@ const Tasks = () => {
               <AddIcon />
             </Button>
 
-            <AddTaskDialog isOpen={addTaskDialogIsOpen} />
+            <AddTaskDialog
+              isOpen={addTaskDialogIsOpen}
+              handleDialogClose={handleDialogClose}
+            />
           </div>
         </div>
 
