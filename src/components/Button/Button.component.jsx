@@ -1,9 +1,19 @@
 import PropTypes from 'prop-types';
 
-const Button = ({ children, variant = 'primary', ...rest }) => {
+const Button = ({
+  children,
+  size = 'small',
+  variant = 'primary',
+  className,
+  ...rest
+}) => {
   const getVariantClasses = () => {
     if (variant === 'primary') {
       return 'bg-[#00ADB5] text-white';
+    }
+
+    if (variant === 'secondary') {
+      return 'bg-[#EEEEEE] text-[#35383E]';
     }
 
     if (variant === 'ghost') {
@@ -11,10 +21,19 @@ const Button = ({ children, variant = 'primary', ...rest }) => {
     }
   };
 
+  const getSizeclasses = () => {
+    if (size === 'small') {
+      return 'py-1 text-xs';
+    }
+    if (size === 'large') {
+      return 'py-2 text-sm';
+    }
+  };
+
   return (
     <button
       {...rest}
-      className={`flex items-center gap-2 rounded-md px-4 py-2 text-xs font-semibold transition hover:opacity-75 ${getVariantClasses()}`}
+      className={`flex items-center justify-center gap-2 rounded-md px-4 font-semibold transition hover:opacity-75 ${getSizeclasses()} ${getVariantClasses()} ${className}`}
     >
       {children}
     </button>
@@ -26,4 +45,6 @@ export default Button;
 Button.propTypes = {
   children: PropTypes.element,
   variant: PropTypes.string,
+  size: PropTypes.string,
+  className: PropTypes.string,
 };
