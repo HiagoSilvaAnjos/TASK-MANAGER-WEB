@@ -25,14 +25,9 @@ const AddTaskDialog = ({ isOpen, handleDialogClose, handleAddTask }) => {
   const nodeRef = useRef();
 
   const handleSaveTask = () => {
-    if (!title) {
-      return toast.error('O campo título não pode estar vazio!');
+    if (!title.trim() || !description.trim()) {
+      return toast.error('Preencha todos os campos!');
     }
-
-    if (!description) {
-      return toast.error('O campo descrição não pode estar vazio!');
-    }
-
     handleAddTask({
       id: uuidv4(),
       title,
