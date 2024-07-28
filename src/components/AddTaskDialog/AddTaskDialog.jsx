@@ -1,9 +1,10 @@
 import './AddTaskDialog.css';
 
 import PropTypes from 'prop-types';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { CSSTransition } from 'react-transition-group';
+import { toast } from 'sonner';
 import { v4 as uuidv4 } from 'uuid';
 
 import Button from '../Button/Button.component';
@@ -11,13 +12,27 @@ import Input from '../Input/Input';
 import TimeSelect from '../TimeSelect/TimeSelect';
 
 const AddTaskDialog = ({ isOpen, handleDialogClose, handleAddTask }) => {
-  const [title, setTitle] = useState();
+  const [title, setTitle] = useState('');
   const [time, setTime] = useState('morning');
-  const [description, setDescription] = useState();
+  const [description, setDescription] = useState('');
+
+  useEffect(() => {
+    setTitle('');
+    setTime('morning');
+    setDescription('');
+  }, [isOpen]);
 
   const nodeRef = useRef();
 
   const handleSaveTask = () => {
+    if (!title) {
+      return toast.error('O campo título não pode estar vazio!');
+    }
+
+    if (!description) {
+      return toast.error('O campo descrição não pode estar vazio!');
+    }
+
     handleAddTask({
       id: uuidv4(),
       title,
