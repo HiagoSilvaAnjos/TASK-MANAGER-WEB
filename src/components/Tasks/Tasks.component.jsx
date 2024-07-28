@@ -57,8 +57,9 @@ const Tasks = () => {
     return toast.success('tarefa deletada com sucesso');
   };
 
-  const handleDialogClose = () => {
-    setTaskDialogIsOpen(false);
+  const handleAddTask = (newTask) => {
+    setTasks([...tasks, newTask]);
+    return toast.success('Tarefa adicionada com successo');
   };
 
   return (
@@ -84,7 +85,8 @@ const Tasks = () => {
 
             <AddTaskDialog
               isOpen={addTaskDialogIsOpen}
-              handleDialogClose={handleDialogClose}
+              handleAddTask={handleAddTask}
+              handleDialogClose={() => setTaskDialogIsOpen(false)}
             />
           </div>
         </div>
