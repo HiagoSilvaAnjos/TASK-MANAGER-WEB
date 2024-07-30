@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 const InputLabel = (props) => {
   return (
     <label
-      className="text-sm font-semibold text-[#35383E]"
+      className="text-sm font-semibold text-brand-dark-blue"
       htmlFor="time"
       {...props}
     >
