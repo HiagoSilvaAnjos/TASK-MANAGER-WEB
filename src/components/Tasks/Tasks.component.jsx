@@ -74,11 +74,11 @@ const Tasks = () => {
           </div>
 
           <div className="flex items-center gap-3">
-            <Button variant={'ghost'}>
+            <Button color={'ghost'}>
               Limpar Tarefa
               <TrashIcon />
             </Button>
-            <Button onClick={() => setTaskDialogIsOpen(true)}>
+            <Button color={'primary'} onClick={() => setTaskDialogIsOpen(true)}>
               Nova Tarefa
               <AddIcon />
             </Button>
