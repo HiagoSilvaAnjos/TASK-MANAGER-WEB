@@ -1,21 +1,20 @@
-// eslint-disable-next-line react/prop-types
-const SidebarButton = ({ children, variant }) => {
-  const handleVariantStyle = () => {
-    if (variant == 'selected') {
-      return 'bg-brand-primary bg-opacity-15 text-brand-primary';
-    }
+import PropTypes from 'prop-types';
+import { tv } from 'tailwind-variants';
 
-    if (variant == 'unselected') {
-      return 'text-brand-dark-blue';
-    }
-  };
+const SidebarButton = ({ children, color }) => {
+  const sidebar = tv({
+    base: 'flex items-center gap-2 rounded-lg px-6 py-3',
+    variants: {
+      color: {
+        selected: 'bg-brand-primary bg-opacity-15 text-brand-primary',
+        unselected: 'text-brand-dark-blue',
+      },
+    },
+  });
 
   return (
     <>
-      <a
-        href="#"
-        className={`flex items-center gap-2 rounded-lg px-6 py-3 ${handleVariantStyle()}`}
-      >
+      <a href="#" className={sidebar({ color })}>
         {children}
       </a>
     </>
@@ -23,3 +22,8 @@ const SidebarButton = ({ children, variant }) => {
 };
 
 export default SidebarButton;
+
+SidebarButton.propTypes = {
+  children: PropTypes.element,
+  color: PropTypes.string,
+};
