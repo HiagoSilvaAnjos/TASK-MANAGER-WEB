@@ -1,46 +1,46 @@
 {
-    "tasks": [
-        {
-            "id": "411df726-6f12-446b-9d3b-a207c203eb28",
-            "title": "Ler livro",
-            "description": "Ler o livro de matemática",
-            "time": "morning",
-            "status": "done"
-        },
-        {
-            "id": "504b740a-1db0-4eed-b423-3a9879261778",
-            "title": "FSW 5",
-            "time": "morning",
-            "description": "Terminar aula do FSW Barber",
-            "status": "done"
-        },
-        {
-            "id": "b6b907bc-8a88-43a6-91db-cd6438703575",
-            "title": "Treinar",
-            "time": "afternoon",
-            "description": "Treinar o cerebro",
-            "status": "in_progress"
-        },
-        {
-            "id": "d81daab8-1c53-4452-b29e-405ae7356661",
-            "title": "Ler",
-            "time": "afternoon",
-            "description": "Ler um capítulo do livro de programação",
-            "status": "in_progress"
-        },
-        {
-            "id": "f7bccc73-1652-4d27-8824-92ec999f00a1",
-            "title": "Revisar Código",
-            "time": "evening",
-            "description": "Revisar o código do projeto do trabalho",
-            "status": "not_started"
-        },
-        {
-            "id": "c546173d-b7d2-4e78-bfc1-3d100190e012",
-            "title": "Reunião de Equipe",
-            "time": "evening",
-            "description": "Participar da reunião de equipe semanal",
-            "status": "not_started"
-        }
-    ]
+  "tasks": [
+    {
+      "id": "411df726-6f12-446b-9d3b-a207c203eb28",
+      "title": "Ler livro",
+      "description": "Ler o livro de matemática",
+      "time": "morning",
+      "status": "done"
+    },
+    {
+      "id": "b6b907bc-8a88-43a6-91db-cd6438703575",
+      "title": "Treinar",
+      "time": "afternoon",
+      "description": "Treinar o cerebro",
+      "status": "in_progress"
+    },
+    {
+      "id": "d81daab8-1c53-4452-b29e-405ae7356661",
+      "title": "Ler",
+      "time": "afternoon",
+      "description": "Ler um capítulo do livro de programação",
+      "status": "in_progress"
+    },
+    {
+      "id": "f7bccc73-1652-4d27-8824-92ec999f00a1",
+      "title": "Revisar Código",
+      "time": "evening",
+      "description": "Revisar o código do projeto do trabalho",
+      "status": "not_started"
+    },
+    {
+      "id": "c546173d-b7d2-4e78-bfc1-3d100190e012",
+      "title": "Reunião de Equipe",
+      "time": "evening",
+      "description": "Participar da reunião de equipe semanal",
+      "status": "not_started"
+    },
+    {
+      "id": "65b4a2cc-a681-4e08-a572-a2de7a053bbe",
+      "title": "FSW 5",
+      "time": "morning",
+      "description": "Criar o FSW Barber",
+      "status": "not_started"
+    }
+  ]
 }

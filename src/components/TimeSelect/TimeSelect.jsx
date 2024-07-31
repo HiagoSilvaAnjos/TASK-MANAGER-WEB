@@ -20,8 +20,8 @@ const TimeSelect = forwardRef((props, ref) => {
           <option value="evening">Noite</option>
         </select>
       </div>
-      {props.errorMessage && (
-        <InputErrorMessage>{props.errorMessage}</InputErrorMessage>
+      {props.errormessage && (
+        <InputErrorMessage>{props.errormessage}</InputErrorMessage>
       )}
     </>
   );
@@ -32,5 +32,5 @@ TimeSelect.displayName = 'TimeSelect';
 export default TimeSelect;
 
 TimeSelect.propTypes = {
-  errorMessage: PropTypes.string,
+  errormessage: PropTypes.string,
 };
